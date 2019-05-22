@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    
+    function seqSearch(mang, so) {//timkiem tuyen tinh
+        for ( i = 0; i < mang.length; ++i) {
+            if (mang[i] == so) {
+                return true;
+            }
+        }
+        return false;
+    }
+    function hienthi(mang){
+        for (i=0 ; i<= mang.length-1 ; i++){
+            console.log(mang[i]+",")
+        }
+    }
+    let mang=[];
+    let n=Number(prompt("Nhap khoang so doan:"));
+    for (i=0 ; i<n ; i++){
+        mang[i]=Math.floor(Math.random()*101)
+    }
+    mang.sort(function(a,b) {
+        return a-b;
+    });
+    hienthi(mang);
+    let so=Number(prompt("Nhap so ban doan: "));
+    let a=seqSearch(mang,so);
+    console.log(a);
+    if (a==true){
+        alert("ban da doan chung")
+    } else {
+        alert("ban da doan sai :))")
+    }
+</script>
+</body>
+</html>
